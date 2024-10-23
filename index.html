@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Automation with Rahul Sharan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    $TOKEN = shell_exec("curl -X PUT 'http://169.254.169.254/latest/api/token' -H 'X-aws-ec2-metadata-token-ttl-seconds: 21600'");
+    $SERVER_HOSTNAME = gethostname();
+    $INSTANCE_TYPE = shell_exec("curl -H 'X-aws-ec2-metadata-token: $TOKEN' http://169.254.169.254/latest/meta-data/instance-type");
+    $PLACEMENT = shell_exec("curl -H 'X-aws-ec2-metadata-token: $TOKEN' http://169.254.169.254/latest/meta-data/placement/availability-zone");
+    ?>
+    <header>
+        <h1>DevOps Automation with</h1>
+        <img src="https://bbdsoftware.com/wp-content/uploads/MServ-Black.png" width="500" height="120" />
+    </header>
+    <div class="container">
+        <h2>Welcome to DevOps Automation!</h2>
+        <p>This is a PHP web page deployed using Packer from a GitHub pipeline.
+        </p>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server hostname:</td>
+                <td>
+                    <?php echo $SERVER_HOSTNAME; ?>
+                </td>
+            </tr>
+            <tr>
+                <td>Instance Type:</td>
+                <td>
+                    <?php echo $INSTANCE_TYPE; ?>
+                </td>
+            </tr>
+            <tr>
+                <td>AZ:</td>
+                <td>
+                    <?php echo $PLACEMENT; ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <p>&copy; 2024 DevOps Automation with BBD Cloud Solutions</p>
+    </footer>
+</body>
+
+</html>
