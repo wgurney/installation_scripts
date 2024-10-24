@@ -1,8 +1,8 @@
 # installation_scripts
 DevOps Installation Scripts
 
-## Zip without 
+## Zip without __MACOSX
 
 ```sh
-zip -r "html_files.zip" "index.html" -x "*/\__MACOSX" -x "*/\.*"
+zip -r "html_files.zip" "index.php" -x "*/\__MACOSX" -x "*/\.*"
 ```
