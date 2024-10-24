@@ -33,12 +33,12 @@
             margin: 25px 0;
             font-size: 0.9em;
             font-family: sans-serif;
-            min-width: 400px;
+            min-width: 600px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         }
 
         .styled-table thead tr {
-            background-color: #009879;
+            background-color: #848f8c;
             color: #ffffff;
             text-align: left;
         }
@@ -57,13 +57,14 @@
         }
 
         .styled-table tbody tr:last-of-type {
-            border-bottom: 2px solid #009879;
+            border-bottom: 2px solid #8e96d4;
         }
 
         .styled-table tbody tr.active-row {
             font-weight: bold;
-            color: #009879;
+            color: #77a0e2;
         }
+
         footer {
             background-color: #35424a;
             color: white;
@@ -91,12 +92,12 @@
         <h2>Welcome to DevOps Automation!</h2>
         <p>This is a PHP web page deployed using Packer from a GitHub pipeline.
         </p>
-        <table>
+        <table class="styled-table">
             <tr>
                 <th>Attribute</th>
                 <th>Value</th>
             </tr>
-            <tr>
+            <tr class="active-row">
                 <td>Server hostname:</td>
                 <td>
                     <?php echo $SERVER_HOSTNAME; ?>
@@ -108,7 +109,7 @@
                     <?php echo $INSTANCE_TYPE; ?>
                 </td>
             </tr>
-            <tr>
+            <tr class="active-row">
                 <td>AZ:</td>
                 <td>
                     <?php echo $PLACEMENT; ?>
