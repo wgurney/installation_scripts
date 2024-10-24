@@ -89,7 +89,7 @@
     </header>
     <div class="container">
         <h2>Welcome to DevOps Automation!</h2>
-        <p>This is a PHP web page deployed using Packer from a GitHub pipeline. Testing AMI updates...
+        <p>This is a PHP web page deployed using Packer from a GitHub pipeline.
         </p>
         <table>
             <tr>
