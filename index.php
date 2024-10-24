@@ -14,7 +14,7 @@
         }
 
         header {
-            background-color: #35424a;
+            background-color: #637c89;
             color: white;
             text-align: center;
             padding: 1em 0;
@@ -43,9 +43,14 @@
             text-align: left;
         }
 
-        .styled-table th,
-        .styled-table td {
+        .styled-table th {
             padding: 12px 15px;
+        }
+
+        .styled-table tbody tr td {
+            padding: 12px 15px;
+            color: #4958c7;
+            /* Change this to your desired color */
         }
 
         .styled-table tbody tr {
@@ -57,7 +62,7 @@
         }
 
         .styled-table tbody tr:last-of-type {
-            border-bottom: 2px solid #8e96d4;
+            border-bottom: 2px solid #4958c7;
         }
 
         .styled-table tbody tr.active-row {
@@ -66,7 +71,7 @@
         }
 
         footer {
-            background-color: #35424a;
+            background-color: #637c89;
             color: white;
             text-align: center;
             padding: 1em 0;
@@ -75,6 +80,7 @@
             width: 100%;
         }
     </style>
+
 </head>
 
 <body>
